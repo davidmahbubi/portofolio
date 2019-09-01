@@ -52,7 +52,7 @@ body{
 
 .nav-item:hover .hr{
     transition: .3s;
-    display: block !important;
+    display: block;
 }
 
 @media(max-width: 991px){
@@ -63,6 +63,9 @@ body{
         background-color: white;
         margin: 0 -20px;
         padding-left: 20px;
+    }
+    .nav-item:hover .hr{
+        display: none;
     }
 }
 
