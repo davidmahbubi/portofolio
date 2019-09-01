@@ -55,6 +55,17 @@ body{
     display: block !important;
 }
 
+@media(max-width: 991px){
+    .nav-item .hr{
+        margin: 0 !important;
+    }
+    .dv-nav-col{
+        background-color: white;
+        margin: 0 -20px;
+        padding-left: 20px;
+    }
+}
+
 .dv-active:hover .hr{
     width: 30px;
 }
