@@ -15,10 +15,14 @@ $(function () {
             clearHr();
             clearActiveMenu();
             setActive(1, 1);
-        } else if (nowScrollTop >= 1200 && nowScrollTop < 1400) {
+        } else if (nowScrollTop >= 1200 && nowScrollTop < 1700) {
             clearHr();
             clearActiveMenu();
             setActive(2, 2);
+        } else if (nowScrollTop >= 1700) {
+            clearHr();
+            clearActiveMenu();
+            setActive(3, 3);
         }
     });
 
