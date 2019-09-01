@@ -1,19 +1,39 @@
 $(function () {
-    const skillHr = $('.hr');
-    $(document).scroll(function () {
-        console.log($(document).scrollTop());
-        if (($(document).scrollTop() >= 0 && $(document).scrollTop() < 597)) {
-            clearHr();
-            $(skillHr[0]).css('display', 'block');
-        } else if ($(document).scrollTop() >= 597 && $(document).scrollTop() < 1200) {
-            clearHr();
-            $(skillHr[1]).css('display', 'block');
-        } else {
 
+    const skillHr = $('.hr');
+    const navLink = $('.nav-link');
+
+    $(document).scroll(function () {
+
+        let nowScrollTop = $(document).scrollTop();
+
+        if (nowScrollTop >= 0 && nowScrollTop < 597) { // Condition in home
+            clearHr();
+            clearActiveMenu();
+            setActive(0, 0);
+        } else if (nowScrollTop >= 592 && nowScrollTop < 1200) { // Condition in skill
+            clearHr();
+            clearActiveMenu();
+            setActive(1, 1);
+        } else if (nowScrollTop >= 1200 && nowScrollTop < 1400) {
+            clearHr();
+            clearActiveMenu();
+            setActive(2, 2);
         }
     });
+
+    function setActive(hrIndex, menuIndex) {
+        $(skillHr[hrIndex]).css('display', 'block');
+        $(navLink[menuIndex]).addClass('dv-color-pri');
+    }
+
     function clearHr() {
         $(skillHr).removeClass('hr-active');
         $(skillHr).css('display', 'none');
     }
+
+    function clearActiveMenu() {
+        $('.nav-link').removeClass('dv-color-pri');
+    }
+
 });
